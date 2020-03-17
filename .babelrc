@@ -1,0 +1,5 @@
+
+{
+  "presets": ["@babel/preset-env", "@vue/babel-preset-jsx", "@vue/babel-sugar-v-model"], 
+  "plugins": ["@babel/plugin-transform-runtime"] 
+}
