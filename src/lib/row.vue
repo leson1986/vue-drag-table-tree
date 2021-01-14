@@ -32,15 +32,15 @@
           ></span>
           <span v-else class="zip-icon arrow-transparent"></span>
           <span
-            :style="{ fontSize: subItem.size + 'px' }"
+            :style="{ fontSize: subItem.size + 'px', whiteSpace: 'normal', wordBreak: 'break-word' }"
             v-if="subItem.formatter"
             v-html="subItem.formatter(model)"
           ></span>
-          <span :style="{ fontSize: subItem.size + 'px' }" v-else v-html="model[subItem.field]"></span>
+          <span :style="{ fontSize: subItem.size + 'px', whiteSpace: 'normal', wordBreak: 'break-word' }" v-else v-html="model[subItem.field]"></span>
         </span>
         <span
-          :style="{ fontSize: subItem.size + 'px' }"
-          v-else-if="subItem.type === 'action' && model[custom_field.parent_id] !== 0"
+          :style="{ fontSize: subItem.size + 'px', whiteSpace: 'normal', wordBreak: 'break-word' }"
+          v-else-if="subItem.type === 'action'"
         >
           <span
             class="action-item"
@@ -50,8 +50,8 @@
             size="small"
             @click.stop.prevent="acItem.onclick(model)"
           >
-            <!-- <i :class="acItem.icon" v-html="acItem.formatter(model)"></i> -->
-            <render-content :node="acItem.formatter(model)"></render-content>
+            <!-- <i :class="acItem.icon" v-html="acItem.formatter(model)"></i> && model[custom_field.parent_id] !== 0 -->
+            <render-content v-if="model[subItem.field] !== undefined" :node="acItem.formatter(model)"></render-content>
           </span>
         </span>
         <span v-else-if="subItem.type === 'checkbox'">
@@ -66,11 +66,11 @@
         </span>
         <span v-else>
           <span
-            :style="{ fontSize: subItem.size + 'px' }"
+            :style="{ fontSize: subItem.size + 'px', whiteSpace: 'normal', wordBreak: 'break-word'}"
             v-if="subItem.formatter"
             v-html="subItem.formatter(model)"
           ></span>
-          <span :style="{ fontSize: subItem.size + 'px' }" v-else>{{model[subItem.field]}}</span>
+          <span :style="{ fontSize: subItem.size + 'px', whiteSpace: 'normal', wordBreak: 'break-word' }" v-else>{{model[subItem.field]}}</span>
         </span>
       </column>
       <div class="hover-model" style="display: none">
@@ -128,10 +128,9 @@ export default {
     space,
     renderContent: {
       props: {
-        node: String
+        node: Object
       },
       render() {
-        console.log(this.node) 
         return (this.node)
       }
     }

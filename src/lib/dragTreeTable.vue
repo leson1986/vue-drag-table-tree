@@ -400,7 +400,6 @@
           for (var i = 0; i< list.length; i++) {
               if (list[i][_this.custom_field['id']] == id) {
                 var newRow = Object.assign({}, list[i], data);
-                console.log(2222, newRow)
                 list[i] = newRow;
               }
               if (list[i][listKey] && list[i][listKey].length) {
@@ -409,7 +408,6 @@
           }
         }
         deep(deepList);
-        console.log(deepList)
         this.data.lists = deepList
       },
       GetChildIds(id, deep=true) {

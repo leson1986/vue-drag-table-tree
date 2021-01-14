@@ -13,6 +13,7 @@ const demoDataList =  [
           name: "联系人",
           uri: "/customer/contacts",
           lists: null,
+          alias: '',
           isShowCheckbox: false,
           highlight: true
         },
@@ -29,8 +30,9 @@ const demoDataList =  [
           id: 117,
           parent_id: 110,
           order: 2,
-          name: "客户维护记录",
+          name: "客户维护记录客户维护记录客户维护记录客户维护记录客户维护记录客户维护记录",
           uri: "/customer/maintain",
+          alias: '',
           lists: null
         },
         {
@@ -86,7 +88,7 @@ const demoDataList =  [
     },
     {
       id: 404,
-      parent_id: 0,
+      // parent_id: 0,
       order: 1,
       name: "审核中心",
       uri: "无",
@@ -103,7 +105,7 @@ const demoDataList =  [
     },
     {
       id: 306,
-      parent_id: 0,
+      // parent_id: 0,
       order: 2,
       name: "数据统计",
       uri: "无",
@@ -128,7 +130,7 @@ const demoDataList =  [
     },
     {
       id: 334,
-      parent_id: 0,
+      // parent_id: 0,
       order: 3,
       name: "基础数据",
       uri: "",
@@ -153,7 +155,7 @@ const demoDataList =  [
     },
     {
       id: 9,
-      parent_id: 0,
+      // parent_id: 0,
       order: 4,
       name: "系统管理",
       uri: "",

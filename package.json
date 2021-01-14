@@ -1,6 +1,6 @@
 {
   "_from": "vue-drag-table-tree",
-  "_id": "vue-drag-table-tree@1.0.2",
+  "_id": "vue-drag-table-tree@1.1.1",
   "_inBundle": false,
   "_integrity": "sha512-A377ev4HiZE+2OnxCBf8aHHcG7D8ex2dDL57w8fBm0a6jN3HNq7uP6FNH3Sv4451Uwor1Ww6xxFnimoOZohFEg==",
   "_location": "/vue-drag-table-tree",
@@ -19,7 +19,7 @@
     "#DEV:/",
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/vue-drag-table-tree/-/vue-drag-table-tree-1.0.2.tgz",
+  "_resolved": "https://registry.npmjs.org/vue-drag-table-tree/-/vue-drag-table-tree-1.1.1.tgz",
   "_shasum": "fb62f5be1285ab59c361c839a06e72d5214d9098",
   "_spec": "vue-drag-table-tree",
   "_where": "D:\\LearningLeader\\FL\\RFWEB",
@@ -27,24 +27,32 @@
     "name": "yangjinkai"
   },
   "bugs": {
-    "url": "https://github.com/leson86/vue-drag-table-tree/issues"
+    "url": "https://github.com/leson1986/vue-drag-table-tree/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "@vue/babel-sugar-v-model": "^1.1.2",
+    "babel-plugin-jsx-v-model": "^2.0.3",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3"
   },
   "deprecated": false,
   "description": "基于Vue实现可以拖拽排序的树形表格",
   "devDependencies": {
-    "@babel/core": "^7.7.2",
+    "@babel/core": "^7.8.7",
+    "@babel/helper-module-imports": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.6.2",
-    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
     "@babel/runtime": "^7.7.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
@@ -58,19 +66,19 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
-  "homepage": "https://github.com/leson86/vue-drag-table-tree#readme",
+  "homepage": "https://github.com/leson1986/vue-drag-table-tree#readme",
   "license": "MIT",
   "main": "dist/dtree-table.js",
   "name": "vue-drag-table-tree",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leson86/vue-drag-table-tree.git"
+    "url": "git+https://github.com/leson1986/vue-drag-table-tree.git"
   },
   "scripts": {
     "build": "webpack --mode production --progress --hide-modules",
     "demo": "webpack --mode development --progress --hide-modules",
-    "dev": "webpack-dev-server --mode development --open --hot --host 0.0.0.0",
+    "dev": "webpack-dev-server --mode development --open --hot --host localhost",
     "webpack": "node_modules/webpack/bin/webpack.js --mode=development"
   },
-  "version": "1.0.2"
+  "version": "1.1.1"
 }

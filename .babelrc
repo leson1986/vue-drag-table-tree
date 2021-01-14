@@ -1,5 +1,16 @@
 
+// {
+//   "presets": ["@babel/preset-env"], 
+// //   "plugins": [
+// //     "@babel/plugin-transform-runtime",
+// //     "@babel/plugin-syntax-dynamic-import",
+// //     "@babel/plugin-proposal-object-rest-spread",
+// //     "transform-vue-jsx"
+// // ]
+//   "plugins": ["@babel/plugin-transform-runtime", "jsx-v-model", "transform-vue-jsx"]
+// }
+
 {
-  "presets": ["@babel/preset-env", "@vue/babel-preset-jsx", "@vue/babel-sugar-v-model"], 
-  "plugins": ["@babel/plugin-transform-runtime"] 
+  "presets":["@babel/react","@babel/env"],
+  "plugins": ["@babel/plugin-transform-runtime", "transform-vue-jsx"]
 }

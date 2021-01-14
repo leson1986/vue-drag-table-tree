@@ -18,6 +18,9 @@
     <Dialog :onSave="onEdit" ref="editDialog"></Dialog>
     <Dialog :onSave="onAdd" ref="addDialog"></Dialog>
     </div>
+
+    <input type="text" v-model="text" />
+    {{text}}
   </div>
 </template>
 
@@ -30,6 +33,7 @@ export default {
   data() {
     return {
       dragHeight: '100%',
+      text: '333',
       treeData: {
         columns: [],
         lists: []
@@ -68,7 +72,11 @@ export default {
     },
     highlight(flag) {
       this.$refs.table.HighlightRow(383, flag, true);
+    },
+    input(e){
+      this.text=e.target.value
     }
+
   },
   mounted() {
     var columns = [
@@ -99,6 +107,8 @@ export default {
           {
             title: '别名',
             type: 'action',
+            field: "alias",
+            show: true,
             width: 350,
             align: 'center',
             actions: [
@@ -110,10 +120,9 @@ export default {
                 },
                 formatter: (item) => {
                   return(
-                          <div class="el-tooltip avue-input" aria-describedby="el-tooltip-8099" tabindex="0">
-                            <div class="el-input el-input--small el-input--suffix">
-                              <input type="text" autocomplete="off"  class="el-input__inner" />
-                            </div>
+                          <div>
+                            <input type="text"  value={item.alias}/>
+                            {this.text}
                           </div>
                   )
                 }
@@ -137,6 +146,8 @@ export default {
       {
         title: "操作",
         type: "action",
+        field: "id",
+        show: true,
         size: 16,
         flex: 1,
         align: "center",
@@ -147,7 +158,7 @@ export default {
               this.$refs.addDialog.show('add', item.id);
             },
             formatter: item => {
-              return "<i>添加子节点 </i>";
+              return (<i>添加子节点 </i>);
             }
           },
           {
@@ -156,7 +167,7 @@ export default {
               this.$refs.editDialog.show('edit', item);
             },
             formatter: item => {
-              return "<i>修改子节点 </i>";
+              return (<i>修改子节点 </i>);
             }
           },
           
@@ -164,7 +175,7 @@ export default {
             text: "删除",
             onclick: this.onDel,
             formatter: item => {
-              return "<i>删除</i>";
+              return (<i>删除</i>);
             }
           }
         ]
